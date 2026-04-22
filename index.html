@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalaa Digital Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #b08d57;
+    --dark-gold: #8c6f45;
+    --bg-cream: #f8f5f2;
+    --text-dark: #2e2e2e;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: var(--bg-cream);
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+  }
+
+  /* Navigation Bar */
+  nav {
+    background: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+
+  nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--gold);
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  nav a:hover { color: var(--gold); }
+
+  /* Header */
+  header {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #ffffff 0%, var(--bg-cream) 100%);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease;
+  }
+
+  p.tagline {
+    font-size: 18px;
+    color: var(--gold);
+    animation: fadeInUp 1s ease;
+  }
+
+  /* Section Fade-in Animation */
+  section { 
+    padding: 60px 20px; 
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Interactive Cards */
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+
+  .card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid transparent;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(176, 141, 87, 0.2);
+    border-color: var(--gold);
+  }
+
+  .card h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    margin-top: 0;
+  }
+
+  .card p {
+    line-height: 1.6;
+    margin: 20px 0;
+  }
+
+  /* Buttons */
+  button {
+    background: var(--gold);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+    width: 100%;
+  }
+
+  button:hover {
+    background: var(--dark-gold);
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(140, 111, 69, 0.3);
+  }
+
+  footer {
+    background: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Kalaa.</div>
+  <div>
+    <a href="#packages">Packages</a>
+    <a href="#design">Creative Design</a>
+    <a href="mailto:kalaastudio.work@gmail.com">Email</a>
+  </div>
+</nav>
+
+<header>
+  <h1>Kalaa Digital Studio</h1>
+  <p class="tagline">Helping small brands grow with creative strategy ✨</p>
+</header>
+
+<section id="packages">
+  <h2 class="section-title">Social Media Packages</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Basic - ₹3000</h3>
+      <p>12 Posts<br>Captions<br>Hashtags</p>
+      <button onclick="bookService('Basic Package')">Book Now</button>
+    </div>
+    <div class="card">
+      <h3>Standard - ₹5000</h3>
+      <p>12 Posts + 4 Reels<br>Captions<br>Story Designs</p>
+      <button onclick="bookService('Standard Package')">Book Now</button>
+    </div>
+    <div class="card">
+      <h3>Premium - ₹8000</h3>
+      <p>12 Posts + 8 Reels<br>Full Page Handling</p>
+      <button onclick="bookService('Premium Package')">Book Now</button>
+    </div>
+  </div>
+</section>
+
+<section id="design">
+  <h2 class="section-title">Creative Design Services</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Visiting Card Design</h3>
+      <p>Professional business card design for your brand identity.</p>
+      <button onclick="bookService('Visiting Card Design')">Book Now</button>
+    </div>
+    <div class="card">
+      <h3>Wedding Card Design</h3>
+      <p>Traditional & modern invitation designs for your big day.</p>
+      <button onclick="bookService('Wedding Card Design')">Book Now</button>
+    </div>
+    <div class="card">
+      <h3>Wedding Invitation Video</h3>
+      <p>Digital animated invite videos with music and flair.</p>
+      <button onclick="bookService('Wedding Video Invite')">Book Now</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>Contact:</strong> kalaastudio.work@gmail.com</p>
+  <p><strong>WhatsApp:</strong> 8108754421</p>
+  <p style="margin-top:20px; font-style:italic; color: #777;">Brand by Ankita Parkar ✨</p>
+</footer>
+
+<script>
+function bookService(service) {
+  const phone = "918108754421";
+  const message = `Hi, I want to book ${service} from Kalaa Digital Studio.`;
+  const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
